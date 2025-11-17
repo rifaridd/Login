@@ -15,45 +15,45 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        val inputusername = findViewById<EditText>(R.id.editTextUsername)
+
+        val inputUsername = findViewById<EditText>(R.id.editTextUsername)
         val inputPassword = findViewById<EditText>(R.id.editTextPassword)
-
         val buttonSubmit = findViewById<Button>(R.id.buttonSubmit)
+        val buttonDaftar = findViewById<Button>(R.id.buttonDaftar)
 
+        // Listener Submit
         buttonSubmit.setOnClickListener {
-            var username = inputusername.text.toString()
-            var password = inputPassword.text.toString()
+            val username = inputUsername.text.toString()
+            val password = inputPassword.text.toString()
 
-            if (username.isEmpty()) {
+            if (username.isEmpty() || password.isEmpty()) {
                 Toast.makeText(
-                    this, "Username/Password tidak boleh kosong",
+                    this,
+                    "Username/Password tidak boleh kosong",
                     Toast.LENGTH_LONG
-                )
-                    .show()
+                ).show()
             } else {
                 Toast.makeText(
-                    this, "Proses login..",
+                    this,
+                    "Proses login..",
                     Toast.LENGTH_LONG
-                )
-                    .show()
+                ).show()
+                // Tambahkan logic autentikasi di sini
             }
+        }
 
-            val buttonDaftar = findViewById<Button>(R.id.buttonDaftar)
+        // Listener Daftar
+        buttonDaftar.setOnClickListener {
+            val intent = Intent(this, PendaftaranActivity::class.java)
+            startActivity(intent)
+            // Jangan finish() di sini, biar MainActivity tetap ada di backstack
+        }
 
-            buttonDaftar.setOnClickListener {
-                val intentPindah = Intent(this, PendaftaranActivity :: class.java)
-                startActivity(intentPindah)
-                finish()
-            }
-
-
-            ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-                val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-                v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-                insets
-
-
-            }
+        // WindowInsets listener
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
         }
     }
 }

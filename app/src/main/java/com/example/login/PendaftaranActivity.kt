@@ -14,7 +14,7 @@ class PendaftaranActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_pendaftaran)
 
-        // BUTTON CANCEL
+
         val backlogin = findViewById<Button>(R.id.btnCancel)
 
         backlogin.setOnClickListener {
@@ -23,11 +23,12 @@ class PendaftaranActivity : AppCompatActivity() {
             finish()
         }
 
-        // FIXED: pakai id 'main' sesuai layout xml
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+
         }
     }
 }
