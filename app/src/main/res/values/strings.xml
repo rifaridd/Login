@@ -2,17 +2,14 @@
 
     <string name="app_name">Login</string>
 
-    <!-- HEADER -->
     <string name="form_header">Formulir Pendaftaran</string>
 
-    <!-- LABEL -->
     <string name="label_username">Username</string>
     <string name="label_email">Email</string>
     <string name="label_name">Nama</string>
     <string name="label_password">Password</string>
     <string name="label_confirm_password">Konfirmasi Password</string>
 
-    <!-- HINT -->
     <string name="hint_username">masukkan username</string>
     <string name="hint_email">masukkan email</string>
     <string name="hint_first_name">nama depan</string>
@@ -20,7 +17,6 @@
     <string name="hint_password">masukkan password</string>
     <string name="hint_confirm_password">konfirmasi password</string>
 
-    <!-- BUTTON -->
     <string name="btn_submit">Kirim</string>
     <string name="btn_cancel">Batal</string>
 
