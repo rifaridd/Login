@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         val buttonSubmit = findViewById<Button>(R.id.buttonSubmit)
         val buttonDaftar = findViewById<Button>(R.id.buttonDaftar)
 
-        // Listener Submit
+        
         buttonSubmit.setOnClickListener {
             val username = inputUsername.text.toString()
             val password = inputPassword.text.toString()
@@ -38,18 +38,18 @@ class MainActivity : AppCompatActivity() {
                     "Proses login..",
                     Toast.LENGTH_LONG
                 ).show()
-                // Tambahkan logic autentikasi di sini
+                
             }
         }
 
-        // Listener Daftar
+        
         buttonDaftar.setOnClickListener {
             val intent = Intent(this, PendaftaranActivity::class.java)
             startActivity(intent)
-            // Jangan finish() di sini, biar MainActivity tetap ada di backstack
+
         }
 
-        // WindowInsets listener
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
