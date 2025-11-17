@@ -21,7 +21,6 @@
             </intent-filter>
         </activity>
 
-        <!-- Tambahkan PendaftaranActivity -->
         <activity
             android:name=".PendaftaranActivity"
             android:exported="true" />
